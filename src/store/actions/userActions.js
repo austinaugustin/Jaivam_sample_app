@@ -6,7 +6,6 @@ export const getuserLogin = (params) => {
         dispatch({ type: "USER_LOGIN_FETCHING" });
         Api('post', apiContants.loginUrl, params)
             .then((response) => {
-                console.log('response', response)
                 if (response.status == 'success') {
                     dispatch({ type: "USER_LOGIN_SUCCESS", response: response });
                 }
