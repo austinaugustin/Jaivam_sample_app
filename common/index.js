@@ -39,22 +39,6 @@ export default function request(type, url, params) {
           }
         })
       break;
-    case 'put':
-      return axios.put(url, params, {
-        headers: { Accept: 'application/json', 'Content-Type': 'multipart/form-data', }, maxContentLength: Infinity, maxBodyLength: 5242880
-      })
-        .then(async function (response) {
-          return await response?.data
-        })
-        .catch(async function (error) {
-          if (error?.response?.status === 401) {
-            return store.dispatch({ type: 'USER_LOGOUT' })
-          }
-          else {
-            return await error?.response?.data
-          }
-        })
-      break;
     default:
       break;
   }
