@@ -9,7 +9,6 @@ export default function request(type, url, params) {
 
   let token = select(store.getState())
   axios.defaults.headers.common['Authorization'] = 'bearer' + token
-  console.log(type,url,params,token)
 
   switch (type) {
     case 'get':
