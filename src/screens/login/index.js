@@ -22,7 +22,7 @@ import {
 } from '../../../assets/color';
 
 function App(props) {
-    
+
     const dispatch = useDispatch();
     const userReducer = useSelector((state) => state?.userReducer);
 
@@ -73,7 +73,6 @@ function App(props) {
                 };
                 setDisable(false);
                 dispatch(getuserLogin(params))
-                // navigation.navigate('Home');
             } else {
                 const err = { ...error };
                 err.email = 'Invalid email address';
@@ -197,7 +196,6 @@ const styles = StyleSheet.create({
     },
     textInput: {
         fontSize: 14,
-        //   fontFamily: SECONDARY_FONT,
         color: TEXT_COLOR,
         paddingBottom: 8,
     },

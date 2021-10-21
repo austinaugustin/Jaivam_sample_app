@@ -1,7 +1,6 @@
 import React from 'react'
 import { TouchableOpacity, Text, ActivityIndicator, View, StyleSheet } from 'react-native';
 import { SECONDARY_COLOR, WHITE_COLOR } from '../../assets/color';
-// import { PRIMARY_FONT } from '../../assets/fonts';
 
 const Button = (props) => {
   const { onPress, disable, label, style } = props
@@ -32,7 +31,6 @@ const styles = StyleSheet.create({
   },
   login: {
     fontSize: 16,
-    // fontFamily: PRIMARY_FONT,
     color: WHITE_COLOR,
     lineHeight: 19
   }
