@@ -14,35 +14,29 @@ export default function request(type, url, params) {
     case 'get':
       return axios.get(url, { params: params })
         .then(async function (response) {
-          console.log("Get Response", response)
-          return await response ?.data
-                })
+          return await response?.data
+        })
         .catch(async function (error) {
-          if (error ?.response ?.status === 401) {
+          if (error?.response?.status === 401) {
             return store.dispatch({ type: 'USER_LOGOUT' })
           }
           else {
-            console.log("Server Error", error)
-            console.log("Server response", error.response)
-            return await error ?.response ?.data
-                    }
+            return await error?.response?.data
+          }
         })
       break;
     case 'post':
       return axios.post(url, params, { maxContentLength: Infinity, maxBodyLength: 5242880 })
         .then(async function (response) {
-          console.log("Post Response", response)
-          return await response ?.data
-                })
+          return await response?.data
+        })
         .catch(async function (error) {
-          if (error ?.response ?.status === 401) {
+          if (error?.response?.status === 401) {
             return store.dispatch({ type: 'USER_LOGOUT' })
           }
           else {
-            console.log("Server Error", error)
-            console.log("Server response", error.response)
-            return await error ?.response ?.data
-                    }
+            return await error?.response?.data
+          }
         })
       break;
     case 'put':
@@ -50,18 +44,15 @@ export default function request(type, url, params) {
         headers: { Accept: 'application/json', 'Content-Type': 'multipart/form-data', }, maxContentLength: Infinity, maxBodyLength: 5242880
       })
         .then(async function (response) {
-          console.log("Put Response", response)
-          return await response ?.data
-                })
+          return await response?.data
+        })
         .catch(async function (error) {
-          if (error ?.response ?.status === 401) {
+          if (error?.response?.status === 401) {
             return store.dispatch({ type: 'USER_LOGOUT' })
           }
           else {
-            console.log("Server Error", error)
-            console.log("Server response", error.response)
-            return await error ?.response ?.data
-                    }
+            return await error?.response?.data
+          }
         })
       break;
     default:
